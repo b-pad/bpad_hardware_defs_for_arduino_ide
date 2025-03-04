@@ -1,0 +1,240 @@
+# Official Espressif options
+menu.UploadSpeed=Upload Speed
+menu.USBMode=USB Mode
+menu.CDCOnBoot=USB CDC On Boot
+menu.MSCOnBoot=USB Firmware MSC On Boot
+menu.DFUOnBoot=USB DFU On Boot
+menu.UploadMode=Upload Mode
+menu.CPUFreq=CPU Frequency
+menu.FlashFreq=Flash Frequency
+menu.FlashMode=Flash Mode
+menu.FlashSize=Flash Size
+menu.PartitionScheme=Partition Scheme
+menu.DebugLevel=Core Debug Level
+menu.PSRAM=PSRAM
+menu.LoopCore=Arduino Runs On
+menu.EventsCore=Events Run On
+menu.MemoryType=Memory Type
+menu.EraseFlash=Erase All Flash Before Sketch Upload
+menu.JTAGAdapter=JTAG Adapter
+menu.ZigbeeMode=Zigbee Mode
+menu.PinNumbers=Pin Numbering
+
+# Custom options
+menu.Revision=Board Revision
+menu.LORAWAN_REGION=LoRaWan Region
+menu.LoRaWanDebugLevel=LoRaWan Debug Level
+menu.LORAWAN_DEVEUI=LoRaWan DevEUI
+menu.LORAWAN_PREAMBLE_LENGTH=LoRaWan Preamble Length
+menu.SLOW_CLK_TPYE=Slow Clk Type(only for LoRaWAN)
+menu.einksize=E-Ink Display Size
+menu.NetworkLogLevel=Network Log Level
+##############################################################
+### DO NOT PUT BOARDS ABOVE THE OFFICIAL ESPRESSIF BOARDS! ###
+##############################################################
+
+# Generic definition to be used for USB discovery of CDC/JTAG
+esp32_family.name=ESP32 Family Device
+esp32_family.hide=true
+esp32_family.vid.0=0x303a
+esp32_family.pid.0=0x1001
+esp32_family.upload_port.0.vid=0x303a
+esp32_family.upload_port.0.pid=0x1001
+esp32_family.build.board=ESP32_FAMILY
+
+##############################################################
+# bpad
+##############################################################
+
+bpad_esp32s3.name=bpad handheld gaming platform
+
+bpad_esp32s3.bootloader.tool={build.core.path}/esptool_py
+bpad_esp32s3.bootloader.tool.default={build.core.path}/esptool_py
+
+bpad_esp32s3.upload.tool={build.core.path}/esptool_py
+bpad_esp32s3.upload.tool.default={build.core.path}/esptool_py
+bpad_esp32s3.upload.tool.network={build.core.path}esp_ota
+
+bpad_esp32s3.upload.maximum_size=1310720
+bpad_esp32s3.upload.maximum_data_size=327680
+bpad_esp32s3.upload.flags=
+bpad_esp32s3.upload.extra_flags=
+bpad_esp32s3.upload.use_1200bps_touch=false
+bpad_esp32s3.upload.wait_for_upload_port=false
+
+bpad_esp32s3.serial.disableDTR=false
+bpad_esp32s3.serial.disableRTS=false
+
+bpad_esp32s3.build.tarch=xtensa
+bpad_esp32s3.build.bootloader_addr=0x0
+bpad_esp32s3.build.target=esp32s3
+bpad_esp32s3.build.mcu=esp32s3
+bpad_esp32s3.build.core=esp32:esp32
+bpad_esp32s3.build.variant=bpad_esp32s3
+bpad_esp32s3.build.board=ESP32S3_DEV
+
+bpad_esp32s3.build.usb_mode=1
+## Changed from 0 to 1
+bpad_esp32s3.build.cdc_on_boot=1
+bpad_esp32s3.build.msc_on_boot=0
+bpad_esp32s3.build.dfu_on_boot=0
+bpad_esp32s3.build.f_cpu=240000000L
+## Changed from 4MB to 16MB
+bpad_esp32s3.build.flash_size=16MB
+bpad_esp32s3.build.flash_freq=80m
+bpad_esp32s3.build.flash_mode=dio
+bpad_esp32s3.build.boot=qio
+bpad_esp32s3.build.boot_freq=80m
+bpad_esp32s3.build.partitions=bpad_esp32s3
+bpad_esp32s3.build.defines=
+bpad_esp32s3.build.loop_core=
+bpad_esp32s3.build.event_core=
+bpad_esp32s3.build.psram_type=qspi
+bpad_esp32s3.build.memory_type={build.boot}_{build.psram_type}
+
+## IDE 2.0 Seems to not update the value
+#bpad_esp32s3.menu.JTAGAdapter.default=Disabled
+#bpad_esp32s3.menu.JTAGAdapter.default.build.copy_jtag_files=0
+bpad_esp32s3.menu.JTAGAdapter.builtin=Integrated USB JTAG
+bpad_esp32s3.menu.JTAGAdapter.builtin.build.openocdscript=esp32s3-builtin.cfg
+bpad_esp32s3.menu.JTAGAdapter.builtin.build.copy_jtag_files=1
+#bpad_esp32s3.menu.JTAGAdapter.external=FTDI Adapter
+#bpad_esp32s3.menu.JTAGAdapter.external.build.openocdscript=esp32s3-ftdi.cfg
+#bpad_esp32s3.menu.JTAGAdapter.external.build.copy_jtag_files=1
+#bpad_esp32s3.menu.JTAGAdapter.bridge=ESP USB Bridge
+#bpad_esp32s3.menu.JTAGAdapter.bridge.build.openocdscript=esp32s3-bridge.cfg
+#bpad_esp32s3.menu.JTAGAdapter.bridge.build.copy_jtag_files=1
+
+#bpad_esp32s3.menu.PSRAM.disabled=Disabled
+#bpad_esp32s3.menu.PSRAM.disabled.build.defines=
+#bpad_esp32s3.menu.PSRAM.disabled.build.psram_type=qspi
+#bpad_esp32s3.menu.PSRAM.enabled=QSPI PSRAM
+#bpad_esp32s3.menu.PSRAM.enabled.build.defines=-DBOARD_HAS_PSRAM
+#bpad_esp32s3.menu.PSRAM.enabled.build.psram_type=qspi
+bpad_esp32s3.menu.PSRAM.opi=OPI PSRAM
+bpad_esp32s3.menu.PSRAM.opi.build.defines=-DBOARD_HAS_PSRAM
+bpad_esp32s3.menu.PSRAM.opi.build.psram_type=opi
+
+bpad_esp32s3.menu.FlashMode.qio=QIO 80MHz
+bpad_esp32s3.menu.FlashMode.qio.build.flash_mode=dio
+bpad_esp32s3.menu.FlashMode.qio.build.boot=qio
+bpad_esp32s3.menu.FlashMode.qio.build.boot_freq=80m
+bpad_esp32s3.menu.FlashMode.qio.build.flash_freq=80m
+bpad_esp32s3.menu.FlashMode.qio120=QIO 120MHz
+bpad_esp32s3.menu.FlashMode.qio120.build.flash_mode=dio
+bpad_esp32s3.menu.FlashMode.qio120.build.boot=qio
+bpad_esp32s3.menu.FlashMode.qio120.build.boot_freq=120m
+bpad_esp32s3.menu.FlashMode.qio120.build.flash_freq=80m
+bpad_esp32s3.menu.FlashMode.dio=DIO 80MHz
+bpad_esp32s3.menu.FlashMode.dio.build.flash_mode=dio
+bpad_esp32s3.menu.FlashMode.dio.build.boot=dio
+bpad_esp32s3.menu.FlashMode.dio.build.boot_freq=80m
+bpad_esp32s3.menu.FlashMode.dio.build.flash_freq=80m
+bpad_esp32s3.menu.FlashMode.opi=OPI 80MHz
+bpad_esp32s3.menu.FlashMode.opi.build.flash_mode=dout
+bpad_esp32s3.menu.FlashMode.opi.build.boot=opi
+bpad_esp32s3.menu.FlashMode.opi.build.boot_freq=80m
+bpad_esp32s3.menu.FlashMode.opi.build.flash_freq=80m
+
+bpad_esp32s3.menu.FlashSize.16M=16MB (128Mb)
+bpad_esp32s3.menu.FlashSize.16M.build.flash_size=16MB
+
+bpad_esp32s3.menu.LoopCore.1=Core 1
+bpad_esp32s3.menu.LoopCore.1.build.loop_core=-DARDUINO_RUNNING_CORE=1
+bpad_esp32s3.menu.LoopCore.0=Core 0
+bpad_esp32s3.menu.LoopCore.0.build.loop_core=-DARDUINO_RUNNING_CORE=0
+
+bpad_esp32s3.menu.EventsCore.1=Core 1
+bpad_esp32s3.menu.EventsCore.1.build.event_core=-DARDUINO_EVENT_RUNNING_CORE=1
+bpad_esp32s3.menu.EventsCore.0=Core 0
+bpad_esp32s3.menu.EventsCore.0.build.event_core=-DARDUINO_EVENT_RUNNING_CORE=0
+
+bpad_esp32s3.menu.USBMode.hwcdc=Hardware CDC and JTAG
+bpad_esp32s3.menu.USBMode.hwcdc.build.usb_mode=1
+bpad_esp32s3.menu.USBMode.default=USB-OTG (TinyUSB)
+bpad_esp32s3.menu.USBMode.default.build.usb_mode=0
+
+## Changed from Disabled to Enabled
+bpad_esp32s3.menu.CDCOnBoot.default=Enabled
+## Changed from 0 to 1
+bpad_esp32s3.menu.CDCOnBoot.default.build.cdc_on_boot=1
+bpad_esp32s3.menu.CDCOnBoot.cdc=Enabled
+bpad_esp32s3.menu.CDCOnBoot.cdc.build.cdc_on_boot=1
+
+bpad_esp32s3.menu.MSCOnBoot.default=Disabled
+bpad_esp32s3.menu.MSCOnBoot.default.build.msc_on_boot=0
+bpad_esp32s3.menu.MSCOnBoot.msc=Enabled (Requires USB-OTG Mode)
+bpad_esp32s3.menu.MSCOnBoot.msc.build.msc_on_boot=1
+
+bpad_esp32s3.menu.DFUOnBoot.default=Disabled
+bpad_esp32s3.menu.DFUOnBoot.default.build.dfu_on_boot=0
+bpad_esp32s3.menu.DFUOnBoot.dfu=Enabled (Requires USB-OTG Mode)
+bpad_esp32s3.menu.DFUOnBoot.dfu.build.dfu_on_boot=1
+
+bpad_esp32s3.menu.UploadMode.default=UART0 / Hardware CDC
+bpad_esp32s3.menu.UploadMode.default.upload.use_1200bps_touch=false
+bpad_esp32s3.menu.UploadMode.default.upload.wait_for_upload_port=false
+bpad_esp32s3.menu.UploadMode.cdc=USB-OTG CDC (TinyUSB)
+bpad_esp32s3.menu.UploadMode.cdc.upload.use_1200bps_touch=true
+bpad_esp32s3.menu.UploadMode.cdc.upload.wait_for_upload_port=true
+
+bpad_esp32s3.menu.PartitionScheme.bpad_16MB_4GBx=bpad 16M Flash (4MB/4MB/8MB/4GB FAT32FS)
+bpad_esp32s3.menu.PartitionScheme.bpad_16MB_4GBx.build.partitions=bpad_16MB_4GB
+bpad_esp32s3.menu.PartitionScheme.bpad_16MB_4GBx.upload.maximum_size=4145728
+
+bpad_esp32s3.menu.CPUFreq.240=240MHz (WiFi)
+bpad_esp32s3.menu.CPUFreq.240.build.f_cpu=240000000L
+bpad_esp32s3.menu.CPUFreq.160=160MHz (WiFi)
+bpad_esp32s3.menu.CPUFreq.160.build.f_cpu=160000000L
+bpad_esp32s3.menu.CPUFreq.80=80MHz (WiFi)
+bpad_esp32s3.menu.CPUFreq.80.build.f_cpu=80000000L
+bpad_esp32s3.menu.CPUFreq.40=40MHz
+bpad_esp32s3.menu.CPUFreq.40.build.f_cpu=40000000L
+bpad_esp32s3.menu.CPUFreq.20=20MHz
+bpad_esp32s3.menu.CPUFreq.20.build.f_cpu=20000000L
+bpad_esp32s3.menu.CPUFreq.10=10MHz
+bpad_esp32s3.menu.CPUFreq.10.build.f_cpu=10000000L
+
+bpad_esp32s3.menu.UploadSpeed.921600=921600
+bpad_esp32s3.menu.UploadSpeed.921600.upload.speed=921600
+bpad_esp32s3.menu.UploadSpeed.115200=115200
+bpad_esp32s3.menu.UploadSpeed.115200.upload.speed=115200
+bpad_esp32s3.menu.UploadSpeed.256000.windows=256000
+bpad_esp32s3.menu.UploadSpeed.256000.upload.speed=256000
+bpad_esp32s3.menu.UploadSpeed.230400.windows.upload.speed=256000
+bpad_esp32s3.menu.UploadSpeed.230400=230400
+bpad_esp32s3.menu.UploadSpeed.230400.upload.speed=230400
+bpad_esp32s3.menu.UploadSpeed.460800.linux=460800
+bpad_esp32s3.menu.UploadSpeed.460800.macosx=460800
+bpad_esp32s3.menu.UploadSpeed.460800.upload.speed=460800
+bpad_esp32s3.menu.UploadSpeed.512000.windows=512000
+bpad_esp32s3.menu.UploadSpeed.512000.upload.speed=512000
+
+bpad_esp32s3.menu.DebugLevel.none=None
+bpad_esp32s3.menu.DebugLevel.none.build.code_debug=0
+bpad_esp32s3.menu.DebugLevel.error=Error
+bpad_esp32s3.menu.DebugLevel.error.build.code_debug=1
+bpad_esp32s3.menu.DebugLevel.warn=Warn
+bpad_esp32s3.menu.DebugLevel.warn.build.code_debug=2
+bpad_esp32s3.menu.DebugLevel.info=Info
+bpad_esp32s3.menu.DebugLevel.info.build.code_debug=3
+bpad_esp32s3.menu.DebugLevel.debug=Debug
+bpad_esp32s3.menu.DebugLevel.debug.build.code_debug=4
+bpad_esp32s3.menu.DebugLevel.verbose=Verbose
+bpad_esp32s3.menu.DebugLevel.verbose.build.code_debug=5
+
+bpad_esp32s3.menu.EraseFlash.none=Disabled
+bpad_esp32s3.menu.EraseFlash.none.upload.erase_cmd=
+bpad_esp32s3.menu.EraseFlash.all=Enabled
+bpad_esp32s3.menu.EraseFlash.all.upload.erase_cmd=-e
+
+bpad_esp32s3.menu.ZigbeeMode.default=Disabled
+bpad_esp32s3.menu.ZigbeeMode.default.build.zigbee_mode=
+bpad_esp32s3.menu.ZigbeeMode.default.build.zigbee_libs=
+bpad_esp32s3.menu.ZigbeeMode.zczr=Zigbee ZCZR (coordinator/router)
+bpad_esp32s3.menu.ZigbeeMode.zczr.build.zigbee_mode=-DZIGBEE_MODE_ZCZR
+bpad_esp32s3.menu.ZigbeeMode.zczr.build.zigbee_libs=-lesp_zb_api_zczr -lesp_zb_cli_command -lzboss_stack.zczr -lzboss_port
+
+##############################################################
+
+
