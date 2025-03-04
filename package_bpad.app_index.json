@@ -20,13 +20,34 @@
           "url": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/raw/refs/heads/master/release/bpad-v0.0.0-d6fcf54a10565faec637a9f7fe1940553636b1dc.zip",
           "archiveFileName": "bpad-v0.0.0-d6fcf54a10565faec637a9f7fe1940553636b1dc.zip",
           "checksum": "SHA-256:11b5704015851a32366ae0f17f7b16779b724d0228629c8331af67661d1ea58e",
-          "size": "78842631",
+          "size": 78842631,
           "boards": [{ "name": "bpad" }],
           "toolsDependencies": [
             {
               "packager": "esp32",
-              "name": "esp32",
-              "version": "2.0.13"
+              "name": "esptool_py",
+              "version": "4.5.1"
+            }
+          ]
+        },
+        {
+          "name": "bpad handheld gaming platform",
+          "architecture": "esp32",
+          "version": "0.1.0",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/discussions"
+          },
+          "url": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/releases/download/v0.1.0/bpad-v0.1.0-818ebdce.zip",
+          "archiveFileName": "bpad-v0.1.0-818ebdce.zip",
+          "checksum": "SHA-256:5e0cc4fb73744336210cdb7c517f51a0d51d9abee2551e8de93d1009b5e23a26",
+          "size": 78842631,
+          "boards": [{ "name": "bpad" }],
+          "toolsDependencies": [
+            {
+              "packager": "esp32",
+              "name": "esptool_py",
+              "version": "4.5.1"
             }
           ]
         }
