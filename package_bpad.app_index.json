@@ -1,0 +1,37 @@
+{
+  "packages": [
+    {
+      "name": "bpad",
+      "maintainer": "bpad.app",
+      "websiteURL": "https://bpad.app",
+      "email": "jacob@pontech.com",
+      "help": {
+        "online": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/discussions"
+      },
+      "platforms": [
+        {
+          "name": "bpad handheld gaming platform",
+          "architecture": "avr",
+          "version": "0.0.0",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/discussions"
+          },
+          "url": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/raw/refs/heads/master/release/bpad-v0.0.0-d6fcf54a10565faec637a9f7fe1940553636b1dc.zip",
+          "archiveFileName": "bpad-v0.0.0-d6fcf54a10565faec637a9f7fe1940553636b1dc.zip",
+          "checksum": "SHA-256:11b5704015851a32366ae0f17f7b16779b724d0228629c8331af67661d1ea58e",
+          "size": "78842631",
+          "boards": [{ "name": "bpad" }],
+          "toolsDependencies": [
+            {
+              "packager": "esp32",
+              "name": "esp32",
+              "version": "2.0.13"
+            }
+          ]
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
