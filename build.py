@@ -58,6 +58,9 @@ system("mv " + zip_filename + " release/")
 
 # Update the "archiveFileName" field.
 
+# List the newly created file
+system("ls -la release")
+
 # Generate a SHA-256 on th ecommand line:
 filesha = run_system_command("sha256sum ./release/" + zip_filename)
 print("Checksum: SHA-256:" + filesha)
