@@ -40,6 +40,22 @@
           "boards": [{ "name": "bpad" }],
           "dependencies": [],
           "toolsDependencies": []
+       },
+        {
+          "name": "bpad handheld gaming platform",
+          "architecture": "esp32",
+          "version": "0.1.1",
+          "category": "Contributed",
+          "help": {
+            "online": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/discussions"
+          },
+          "url": "https://github.com/b-pad/bpad_hardware_defs_for_arduino_ide/releases/download/v0.1.1/bpad-v0.1.1-6399bb8.zip",
+          "archiveFileName": "bpad-v0.1.1-6399bb8.zip",
+          "checksum": "SHA-256:f07c52c6c733a31cd416d6f0a04ffa9742b2da932713dc339920e3d209cb2600",
+          "size": 78842631,
+          "boards": [{ "name": "bpad" }],
+          "dependencies": [],
+          "toolsDependencies": []
        }
       ],
       "tools": []
