@@ -48,12 +48,12 @@ esp32_family.build.board=ESP32_FAMILY
 
 bpad_esp32s3.name=bpad
 
-bpad_esp32s3.bootloader.tool={build.core.path}/esptool_py
-bpad_esp32s3.bootloader.tool.default={build.core.path}/esptool_py
+bpad_esp32s3.bootloader.tool=esptool_py
+bpad_esp32s3.bootloader.tool.default=esptool_py
 
-bpad_esp32s3.upload.tool={build.core.path}/esptool_py
-bpad_esp32s3.upload.tool.default={build.core.path}/esptool_py
-bpad_esp32s3.upload.tool.network={build.core.path}esp_ota
+bpad_esp32s3.upload.tool=esptool_py
+bpad_esp32s3.upload.tool.default=esptool_py
+bpad_esp32s3.upload.tool.network=esp_ota
 
 bpad_esp32s3.upload.maximum_size=1310720
 bpad_esp32s3.upload.maximum_data_size=327680

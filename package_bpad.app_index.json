@@ -22,13 +22,14 @@
           "checksum": "SHA-256:11b5704015851a32366ae0f17f7b16779b724d0228629c8331af67661d1ea58e",
           "size": 78842631,
           "boards": [{ "name": "bpad" }],
-          "toolsDependencies": [
+          "dependencies": [
             {
+              "name": "esp32",
               "packager": "esp32",
-              "name": "esptool_py",
-              "version": "4.5.1"
+              "version": "2.0.13"
             }
-          ]
+          ],
+          "toolsDependencies": []
         },
         {
           "name": "bpad handheld gaming platform",
@@ -43,14 +44,21 @@
           "checksum": "SHA-256:5e0cc4fb73744336210cdb7c517f51a0d51d9abee2551e8de93d1009b5e23a26",
           "size": 78842631,
           "boards": [{ "name": "bpad" }],
+          "dependencies": [
+            {
+              "name": "esp32",
+              "packager": "esp32",
+              "version": "2.0.13"
+            }
+          ],
           "toolsDependencies": [
             {
+              "name": "esp32",
               "packager": "esp32",
-              "name": "esptool_py",
-              "version": "4.5.1"
+              "version": "2.0.13"
             }
           ]
-        }
+       }
       ],
       "tools": []
     }
